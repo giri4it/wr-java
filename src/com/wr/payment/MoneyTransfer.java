@@ -5,17 +5,13 @@ package com.wr.payment;
  */
 public class MoneyTransfer {
 
-    public static boolean transfer(SendMoneyAccount fromAccount, ReceiveMoneyAccount toAccount, Money money){
+    public static void transfer(SendMoneyAccount fromAccount, ReceiveMoneyAccount toAccount, Money money){
             fromAccount.debit(money);
             toAccount.credit(money);
     }
 
-    public static SendMoneyAccount getSendMoneyAccount(String accId){
+    public static Account getAccount(String acId){
         return new AccountImpl();
-    }
-
-    public static ReceiveMoneyAccount getreceiveMoneyAccount(String accId){
-       return new AccountImpl();
     }
 
     public static Money  getMoney(float amount){
